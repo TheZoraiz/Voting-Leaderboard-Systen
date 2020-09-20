@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Voting & Leaderboard System</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="box heading">
+                <h1>Voting & Leaderboard System</h1>
+            </div>
+
+            <div class="box controls">
+                <button id="admin" onclick="openAdminWindow()">Admin Login</button>
+                <p id="admin-logo"></p>
+                <button id="logout" onclick="logout()">Logout</button>
+                <button id="requests-btt" onclick="requests()">Requests</button>
+                <button id="join" onclick="openViwereWindow()">Join Election</button>
+                <button id="add-vote" onclick="addVote()">Add Vote</button>
+                <div class="sorting">
+                    <label id="sort-by">Sort By:</label>
+                    <select name="options" id="options" onchange="sorting()">
+                        <option value="votes">Votes</option>
+                        <option value="name">Name</option>
+                        <option value="age">Age</option>
+                        <option value="city">City</option>
+                        <option value="gender">Gender</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row columns">
+                <p>Name</p>
+                <p>Age</p>
+                <p>City</p>
+                <p>Gender</p>
+                <p>Votes</p>
+                <p class="choice">Choice</p>
+            </div>
+            <div class="box content">
+                <div class="row candidates">
+                    <p class="name">Zoraiz</p>
+                    <p class="age">22</p>
+                    <p class="city">Lahore</p>
+                    <p class="gender">Male</p>
+                    <p class="votes">32</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Maheen</p>
+                    <p class="age">26</p>
+                    <p class="city">Quetta</p>
+                    <p class="gender">Female</p>
+                    <p class="votes">27</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Shahan</p>
+                    <p class="age">21</p>
+                    <p class="city">Karachi</p>
+                    <p class="gender">Male</p>
+                    <p class="votes">26</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Usama</p>
+                    <p class="age">20</p>
+                    <p class="city">Karachi</p>
+                    <p class="gender">Male</p>
+                    <p class="votes">24</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Hina</p>
+                    <p class="age">20</p>
+                    <p class="city">Lahore</p>
+                    <p class="gender">Female</p>
+                    <p class="votes">22</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Muhammad</p>
+                    <p class="age">25</p>
+                    <p class="city">Sahiwal</p>
+                    <p class="gender">Male</p>
+                    <p class="votes">21</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Sohail</p>
+                    <p class="age">16</p>
+                    <p class="city">Lahore</p>
+                    <p class="gender">Male</p>
+                    <p class="votes">20</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Ahmad</p>
+                    <p class="age">19</p>
+                    <p class="city">Sahiwal</p>
+                    <p class="gender">Male</p>
+                    <p class="votes">19</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Sana</p>
+                    <p class="age">18</p>
+                    <p class="city">Islamabad</p>
+                    <p class="gender">Female</p>
+                    <p class="votes">15</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Hafsa</p>
+                    <p class="age">30</p>
+                    <p class="city">Islamabad</p>
+                    <p class="gender">Female</p>
+                    <p class="votes">13</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+                <div class="row candidates">
+                    <p class="name">Adil</p>
+                    <p class="age">34</p>
+                    <p class="city">Okara</p>
+                    <p class="gender">Male</p>
+                    <p class="votes">11</p>
+                    <p class="choice elected"><input type="checkbox" value="choice?" class="choice"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="join-vote">
+            <div class="window" id="abcd">
+                <h1 class="viewer-heading" style="font-family: caramelia;">Please insert your information</h1>
+                <div class="credentials">
+                    <input type="text" class="field" id="name" placeholder="Enter your name">
+                    <input type="text" class="field" id="age" placeholder="Enter your age">
+                    <input type="text" class="field" id="city" placeholder="Which city do you live in?">
+                    <select name="gender-choose" id="gender-choose">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="keys">
+                    <button id="submit-viewer" onclick="submitViewer()">Submit</button>
+                    <button id="cancel" onclick="closeViewerWindow()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="admin-vote">
+            <div class="window">
+                <h1 class="viewer-heading" style="font-family: caramelia;">Please insert your administrator login</h1>
+                <div class="credentials admin-only">
+                    <p>Sample admin login and password: admin</p>
+                    <input type="text" class="field" id="id" placeholder="Enter your userame">
+                    <input type="password" class="field" id="password" placeholder="Enter your password">
+                </div>
+                <div class="keys">
+                    <button id="submit-admin" onclick="submitAdmin()">Submit</button>
+                    <button id="cancel" onclick="closeAdminWindow()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="requests">
+            <div class="window">
+                <h1 class="viewer-heading" style="font-family: caramelia;">Admission Requests</h1>
+                <div id="issues-requests" style="width:100%;overflow-y:scroll">
+                    
+                </div>
+                <div class="keys">
+                    <button id="submit-requests" onclick="submitAdminRequests()">Submit</button>
+                    <button id="close" onclick="closeRequestsWindow()">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="final-panel">
+            <div class="window">
+                <h1 class="viewer-heading" style="font-family: caramelia;">Which candidate do you support?</h1>
+                <div id="final-votes" style="width:100%;overflow-y:scroll">
+                    
+                </div>
+                <div class="keys">
+                    <button id="submit-admin" onclick="submitAdmin()">Submit</button>
+                    <button id="cancel" onclick="closeAdminWindow()">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="script.js"></script>
+</html>

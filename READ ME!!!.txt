@@ -1,0 +1,1 @@
+The project focuses entirely on front-end languages and doesn't delve into databases or other forms of data storage.

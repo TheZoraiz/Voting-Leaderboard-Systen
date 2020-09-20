@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "caramelia";
+    src: url("Caramelia/Caramelia.ttf")
+}
+
+html {
+    background-image: url("background.jpg");
+    background-position: center;
+}
+
+body {
+    text-align: center;
+    font-family: arial;
+    margin: 0;
+}
+
+.main-container {
+    border: 1px solid black;
+    width: 900px;
+    height: 600px;
+    margin: auto;
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 50px;
+}
+
+.main-container h1 {
+    margin: 15px 0 0 0;
+    text-align: center;
+    vertical-align: middle;
+    font-family: caramelia;
+    font-size: 50px;
+    text-shadow: 0 0 3px;
+}
+
+.heading {
+    flex: 1;
+}
+
+.controls {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls button {
+    margin: 10px 40px;
+    border-radius: 10px;
+    font-size: 17px;
+    height: 40px;
+    width: 120px;
+    border: 1px solid #b9b9b9;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px #5f5f5f;
+}
+
+.content {
+    flex: 10;
+    overflow-y: scroll;
+}
+
+.sorting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 30px 0 30px;
+}
+
+#sort-by {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+#options {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #b1b1b1;
+    font-size: 17px;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    border-top-style: double;
+    font-weight: bold;
+}
+
+.columns p {
+    font-size: 25px !important;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+    transition: ease;
+}
+
+.row p {
+    font-size: 20px;
+    margin-top: 10px;
+    margin: 10px;
+    flex: 1;
+}
+
+#join-vote, #admin-vote, #requests, #final-panel {
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#admin-vote .window {
+    height: 400px;
+}
+
+#requests {
+    display: none;
+}
+
+.window {
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.credentials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+.admin-only .field {
+    margin: 17px;
+}
+
+.field {
+    width: 300px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid black;
+    font-size: 17px;
+    text-align: center;
+}
+
+.field:hover {
+    box-shadow: 0px 0px 10px;
+    border: none;
+}
+
+#gender-choose {
+    width: 300px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid black;
+    font-size: 17px;
+}
+
+#gender-choose:focus {
+    box-shadow: 0px 0px 10px;
+    border: none;
+}
+
+.keys {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+.keys button {
+    margin: 0 15px;
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    border: 1px solid #b9b9b9;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px #5f5f5f;
+}
+
+.viewer-heading {
+    margin: 30px 20px 0 20px;
+}
+
+#logout {
+    display: none;
+}
+
+#admin-logo {
+    display: none;
+    font-weight: bold;
+}
+
+#requests-btt {
+    display: none;
+}
+
+#check {
+    margin: 15px;
+}
+
+.hovered {
+    background-color: rgb(214, 214, 214) !important;
+    transition-duration: 0.3s;
+}
+
+.choice {
+    display: none;
+}
+
+.admin-only p {
+    color: red;
+}
